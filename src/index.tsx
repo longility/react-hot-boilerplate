@@ -1,8 +1,10 @@
-import { AppContainer } from 'react-hot-loader';
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App';
 
+import { AppContainer } from 'react-hot-loader';
+import * as ReactDOM from "react-dom";
+import * as React from "react";
+import App from "./App";
+
+declare let module: any;
 const rootEl = document.getElementById('root');
 const render = Component =>
   ReactDOM.render(

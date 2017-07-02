@@ -14,7 +14,7 @@ module.exports = {
     // bundle the client for hot reloading
     // only- means to only hot reload for successful updates
 
-    './src/index.js',
+    './src/index.tsx',
     // the entry point of our app
   ],
 
@@ -27,15 +27,21 @@ module.exports = {
     publicPath: '/static/'
     // necessary for HMR to know where to load the hot update chunks
   },
+  
+  resolve: {
+    // Add '.ts' and '.tsx' as resolvable extensions.
+    extensions: [".ts", ".tsx", ".js", ".json"]
+  },
 
   devtool: 'inline-source-map',
 
   module: {
     rules: [
       {
-        test: /\.jsx?$/,
+        test: /\.tsx?$/,
         use: [
-          'babel-loader',
+          'react-hot-loader/webpack',
+          'awesome-typescript-loader'
         ],
         exclude: /node_modules/,
       },

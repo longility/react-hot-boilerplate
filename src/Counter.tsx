@@ -1,6 +1,8 @@
-import React, { Component } from 'react';
+import * as React from 'react';
+import { Component } from "react";
 
-export default class Counter extends Component {
+export default class Counter extends Component<any,any> {
+  interval: any;
   constructor(props) {
     super(props);
     this.state = { counter: 0 };
